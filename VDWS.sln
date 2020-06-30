@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F813B918-60E5-463F-9008-4F95F69FEB0E}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		VDWS.vsmdi = VDWS.vsmdi
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{CD34C341-05E3-475E-AFA6-3D46F30C45B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VDWS-Tests", "VDWS-Tests\VDWS-Tests.csproj", "{52C4DE9C-0B76-4706-9C1B-DFB17AE75903}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleDatabaseManager", "VehicleDatabaseWebService\VehicleDatabaseManager.csproj", "{C0363A95-2DD8-469B-8C46-422FA201C8B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD34C341-05E3-475E-AFA6-3D46F30C45B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD34C341-05E3-475E-AFA6-3D46F30C45B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52C4DE9C-0B76-4706-9C1B-DFB17AE75903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52C4DE9C-0B76-4706-9C1B-DFB17AE75903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52C4DE9C-0B76-4706-9C1B-DFB17AE75903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52C4DE9C-0B76-4706-9C1B-DFB17AE75903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0363A95-2DD8-469B-8C46-422FA201C8B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0363A95-2DD8-469B-8C46-422FA201C8B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0363A95-2DD8-469B-8C46-422FA201C8B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0363A95-2DD8-469B-8C46-422FA201C8B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = 
+		SolutionGuid = {369238A3-5736-48AC-A5A4-026AE66A4F03}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = VDWS.vsmdi
+	EndGlobalSection
+EndGlobal

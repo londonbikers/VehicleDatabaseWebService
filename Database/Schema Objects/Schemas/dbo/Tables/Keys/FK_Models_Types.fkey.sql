@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[Models]
+    ADD CONSTRAINT [FK_Models_Types] FOREIGN KEY ([TypeID]) REFERENCES [dbo].[Types] ([ID]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+

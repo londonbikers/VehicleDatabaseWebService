@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="VehicleDatabase" Class="VDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(local);Initial Catalog=VehicleDatabase;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="VehicleDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Clients" Member="DbClients">
+    <Type Name="DbClient">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="CallbackUrl" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Statuses" Member="DbStatus">
+    <Type Name="DbStatus">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Types" Member="DbTypes">
+    <Type Name="DbType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DbType_Model" Member="DbModels" ThisKey="ID" OtherKey="TypeID" Type="DbModel" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Manufacturers" Member="DbManufacturers">
+    <Type Name="DbManufacturer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="WikipediaID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DbManufacturer_Model" Member="DbModels" ThisKey="ID" OtherKey="ManufacturerID" Type="DbModel" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Models" Member="DbModels">
+    <Type Name="DbModel">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ManufacturerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="VariantName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="WikipediaID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="YearIntroduced" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YearStopped" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EngineSizeCC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="DbManufacturer_Model" Member="DbManufacturer" ThisKey="ManufacturerID" OtherKey="ID" Type="DbManufacturer" IsForeignKey="true" />
+      <Association Name="DbType_Model" Member="DbType" ThisKey="TypeID" OtherKey="ID" Type="DbType" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
